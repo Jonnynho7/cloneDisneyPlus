@@ -11,8 +11,8 @@
 <body>
     <header class="header header--is-hidden">
         <div class="header__container">
-            <h1 >
-                
+            <h1>
+
                 <img class="header__logo" src="./dist/images/disneyplus.svg" alt="Disney+">
             </h1>
             <ul class="header__links">
@@ -178,7 +178,10 @@
         </div>
     </section>
     <section class="image-text-section image-text-section--img-full-width">
-        <img src="./dist/images/fundo_rei_leao.png" alt="imagem com telas">
+        <picture>
+            <source media="(max-width: 768px)" srcset="./dist/images/fundo_rei_leao_celular.png"/>
+            <img src="./dist/images/fundo_rei_leao.png" alt="imagem com telas">
+        </picture>
         <div class=" image-text-section__text_container image-text-section--img-full-width__text_container">
             <h2 class="title">Baixe filmes e séries</h2>
             <p class="text--big">
