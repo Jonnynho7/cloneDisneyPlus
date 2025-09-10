@@ -3,6 +3,12 @@
 @use 'shows';
 @use 'plans';
 @use 'available-devices';
+@use 'faq';
+@use 'footer';
+@use 'header';
+@use 'sass:color';
+
+
 @import url('https://fonts.cdnfonts.com/css/avenir');
 
 /*
@@ -26,6 +32,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Avenir;
+    list-style: none;
 }
 
 body {
@@ -78,46 +85,75 @@ body {
 
 
 .button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 60px;
     font-size: 18px;
     color: variaveis.$corTextoSecundario;
-    background-color: #6421ff;
+    background-color: variaveis.$corBtnPrimario;
     text-transform: uppercase;
     border-radius: 4px;
-    margin-top: 2vw;
-    margin-bottom: 8px;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    border: 1px solid variaveis.$corBtnPrimario;
 
+    &:hover {
+        background-color: color.adjust(variaveis.$corBtnPrimario, $lightness: 3%);
+
+    }
+
+    &--secondary {
+        background-color: variaveis.$corBtnSecundario;
+        border-color: variaveis.$corBtnSecundario;
+
+        &:hover {
+            background-color: color.adjust(variaveis.$corBtnSecundario, $lightness: 3%);
+        }
+    }
+
+    &--dark {
+        background-color: rgba(variaveis.$corBtnDark, 0.8);
+        border-color: variaveis.$corTextoSecundario;
+
+        &:hover {
+            background-color: variaveis.$corTextoSecundario;
+            color: variaveis.$corDeFundo;
+
+        }
+    }
 }
 
-.image-text-section{
+.image-text-section {
     padding: 5.6vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
 
-    img{
+    img {
         max-width: 100%;
     }
 
-    &__text_container{
+    &__text_container {
         padding: 0 2vw
     }
-    
-    h2{
+
+    h2 {
         margin-bottom: 24px;
     }
 
-    &--img-full-width{
+    &--img-full-width {
         display: block;
         position: relative;
 
-        img{
+        img {
             width: 100%;
 
         }
-        &__text_container{
+
+        &__text_container {
             position: absolute;
             top: 0;
             left: 50%;
